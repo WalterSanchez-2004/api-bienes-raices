@@ -1,0 +1,21 @@
+ID,Ubicación,Tamaño_m2,Habitaciones,Baños,Estado,Estacionamiento,Precio_USD
+1,Lima,120,3,2,Nuevo,Si,200000
+2,Arequipa,95,2,1,Usado,No,130000
+3,Lima,150,4,3,Remodelado,Si,350000
+4,La Libertad,80,2,1,Nuevo,No,90000
+5,Lambayeque,110,3,2,Usado,Si,120000
+6, Cusco,70,2,1,Nuevo,No,85000
+7,Piura,100,3,2,Remodelado,Si,150000
+8,Lima,60,1,1,Usado,No,75000
+9,Tarma,130,3,2,Nuevo,Si,300000
+10,Ica,90,2,1,Usado,No,95000
+11,Huancayo,105,3,2,Remodelado,Si,130000
+12,Pucallpa,85,2,1,Nuevo,No,80000
+13,Tumbes,75,1,1,Usado,No,70000
+14,Huaraaz,115,3,2,Nuevo,Si,140000
+15,Puno,95,2,1,Remodelado,No,100000
+16,Moquegua,88,2,1,Nuevo,No,90000
+17,Tacna,105,3,2,Usado,Si,120000
+18,Ayacucho,78,2,1,Remodelado,No,85000
+19,Cajamarca,110,3,2,Nuevo,Si,115000
+20,La Merced,60,1,1,Usado,Si,75000

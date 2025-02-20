@@ -1,0 +1,38 @@
+# Cargar librerías necesarias
+library(plumber)
+library(randomForest)
+library(jsonlite)
+
+# Cargar el modelo previamente entrenado
+modelo <- readRDS("modelo_ridge.rds")
+
+#* @get /predecir
+#* @param tamano_m2 El tamaño de la propiedad en m2
+#* @param habitaciones Número de habitaciones
+#* @param baños Número de baños
+#* @param estado Estado de la propiedad (ejemplo: "Nuevo", "Usado")
+#* @param estacionamiento Número de estacionamientos
+#* @serializer json
+function(tamano_m2, habitaciones, baños, estado, estacionamiento) {
+  
+  # Convertir parámetros a formato numérico
+  tamano_m2 <- as.numeric(tamano_m2)
+  habitaciones <- as.integer(habitaciones)
+  baños <- as.integer(baños)
+  estacionamiento <- as.integer(estacionamiento)
+  
+  # Crear un data frame con los valores ingresados
+  nueva_propiedad <- data.frame(
+    Tamaño_m2 = tamano_m2,
+    Habitaciones = habitaciones,
+    Baños = baños,
+    Estado = as.character(estado),
+    Estacionamiento = estacionamiento
+  )
+  
+  # Predecir el precio
+  prediccion <- predict(modelo, nueva_propiedad)
+  
+  # Retornar el resultado en JSON
+  return(list(precio_estimado = prediccion))
+}
